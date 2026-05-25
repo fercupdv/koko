@@ -1,0 +1,134 @@
+/* ==========================================================================
+   VARIABLES DE ESTILO (Paleta Retro Relajante e Independiente)
+   ========================================================================== */
+:root {
+    --bg-warm-white: #fcfbfa;       /* Blanco lánguido y acogedor */
+    --pastel-blue: #e3fafc;         /* Azul turquesa pastel */
+    --pastel-lilac: #f1ecf9;        /* Lila pastel sumamente suave */
+    --text-main: #333940;           /* Gris profundo (evita el negro puro corporativo) */
+    --text-muted: #737c85;          /* Gris medio sutil */
+    --glass-bg: rgba(255, 255, 255, 0.4); 
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-serif: 'Lora', serif;
+    --transition-smooth: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ==========================================================================
+   RESET GENERAL Y TIPOGRAFÍA
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var(--bg-warm-white);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+}
+
+body {
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Marca de agua estilo interfaz de cámara analógica */
+.camera-hud {
+    position: fixed;
+    top: 25px;
+    left: 35px;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    z-index: 100;
+    font-weight: 500;
+    opacity: 0.6;
+    pointer-events: none; /* No interfiere con clics */
+}
+
+/* ==========================================================================
+   NAVEGACIÓN COMPARTIDA
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    z-index: 90;
+    background: rgba(252, 251, 250, 0.75);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.nav-brand {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.85rem;
+    margin-left: 30px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    transition: opacity 0.3s ease, color 0.3s ease;
+    opacity: 0.6;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+/* Indicador visual sutil para saber en qué página estás exactamente */
+.nav-links a.active-link {
+    opacity: 1;
+    font-weight: 500;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--text-main);
+    padding-bottom: 4px;
+}
+
+/* ==========================================================================
+   ESTILOS DE CADA PÁGINA (HERO, PROYECTOS, SOBRE MÍ, CONTACTO)
+   ========================================================================== */
+
+/* --- 1. SECCIÓN HERO (index.html) --- */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    background-color: var(--pastel-blue);
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: saturate(0.8) contrast(0.95) brightness(1.02);
+    transform: scale(1.02);
+    will-change: transform;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(227, 250, 252, 0.85) 0%, rgba(241, 236, 249, 0.75) 100%);
+    z-index
